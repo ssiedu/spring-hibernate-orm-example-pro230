@@ -16,6 +16,27 @@ public class StudentController {
 	@Autowired
 	private StudentService service;
 
+	@RequestMapping("updatestudent")
+	public ModelAndView UpdateStudentData(@ModelAttribute("student") Student student){
+		service.changeStudentData(student);
+		ModelAndView mv=new ModelAndView("redirect:studentlist");
+		return mv;
+	}
+	@RequestMapping("updateform")
+	public ModelAndView showUpdateForm(@RequestParam("id") int rno){
+		ModelAndView mv=new ModelAndView("studentupdateform");
+		Student student=service.getStudent(rno);
+		mv.addObject("student", student);
+		return mv;
+	}
+	
+	@RequestMapping("delete")
+	public ModelAndView deleteRecord(@RequestParam("id") int rno){
+		service.deleteStudent(rno);
+		ModelAndView mv=new ModelAndView("redirect:studentlist");
+		return mv;
+	}
+	
 	@RequestMapping("studentlist")
 	public ModelAndView showAllStudents(){
 		List<Student> students=service.findAllStudents();

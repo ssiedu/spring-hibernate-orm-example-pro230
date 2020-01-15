@@ -15,6 +15,6 @@
 		</pre>
 	<hr>
 	<a href="index.jsp">Home</a><br>
-	<a href="newstudent">Add-More</a><br>
+	<a href="studententry">Add-More</a><br>
 </body>
 </html>
