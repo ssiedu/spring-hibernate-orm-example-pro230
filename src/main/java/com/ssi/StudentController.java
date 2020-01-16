@@ -26,7 +26,7 @@ public class StudentController {
 	public ModelAndView showUpdateForm(@RequestParam("id") int rno){
 		ModelAndView mv=new ModelAndView("studentupdateform");
 		Student student=service.getStudent(rno);
-		mv.addObject("student", student);
+		mv.addObject("stud", student);
 		return mv;
 	}
 	

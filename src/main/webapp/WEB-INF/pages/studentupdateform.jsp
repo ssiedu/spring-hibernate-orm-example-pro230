@@ -1,17 +1,17 @@
-<%@page isELIgnored="false" %>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="fr" %>
 <html>
 <body>
 	<h3>Student-Update-Form</h3>
 	<hr>
-		<form action="updatestudent">
+		<fr:form action="updatestudent" modelAttribute="stud">
 		<pre>
-		RollNo	<input type="text" name="rno" value="${student.rno}"/>
-		Name	<input type="text" name="name" value="${student.name}"/>
-		Email	<input type="text" name="email" value="${student.email}"/>
-		Mobile	<input type="text" name="mobile" value="${student.mobile}"/>
+		RollNo	<fr:input path="rno"/>
+		Name	<fr:input path="name"/>
+		Email	<fr:input path="email"/>
+		Mobile	<fr:input path="mobile"/>
 			<input type="submit" value="Update-Data"/>
 		</pre>			
-		</form>
+		</fr:form>
 	<hr>
 </body>
 </html>
